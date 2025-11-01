@@ -47,6 +47,9 @@ h1{
   font-weight: 400;
   font-style: normal;
   font-size: 50px;
+  text-decoration: dotted underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 4px;
 }
 
 a {
