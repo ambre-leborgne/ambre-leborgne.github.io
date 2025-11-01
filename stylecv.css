@@ -1,0 +1,50 @@
+h2{
+  font-family: "arial" , system-ui;
+  font-optical-sizing: auto;
+  font-style: normal;
+  align-self: center;
+  font-size: 25px;
+}
+
+.header{
+    background: rgb(255, 218, 224);
+    padding:10px;
+    margin:0px;
+    margin-right: 600px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+}
+}
+.header-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: span 2;
+}
+.header-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-column: span ;
+}
+body{
+    font-family: "Faune";
+    color:rgb(0, 0, 0);
+    font-size:18px;
+    text-align:left;
+    margin-left: 70px;
+    margin-top: 50px;
+}
+
+.special-gothic-condensed-one-regular {
+  font-family: "Special Gothic Condensed One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+h1{
+  font-family: "Special Gothic Condensed One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+}
