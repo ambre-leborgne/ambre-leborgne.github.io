@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Poster Nouvelles Découvertes — Ambre Leborgne</title>
+
+<link rel="stylesheet" href="style5.css"> 
+<style>
+  /* Styles supplémentaires pour la gestion de l'affichage */
+  .hero-wrap {
+    position: relative;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+  }
+
+  .arrow-left {
+    left: 10px;
+  }
+
+  .arrow-right {
+    right: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .thumbs {
+      display: none; /* Cacher les vignettes sur les petits écrans */
+    }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <!-- Header conservé à l’identique -->
+  <div class="header-overlay">
+    <div class="logo">
+      <a href="index.html" aria-label="Retour à l'accueil">
+        <span class="word">Ambre Leborgne - Portfolio</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- Colonne gauche : texte du projet -->
+  <div class="left">
+    <div class="content-left">
+
+      <div class="project-intro">
+        <div class="project-title">Poster Nouvelles Découvertes</div>
+
+        <div class="project-description">
+          <p>Cette série d’affiches explore quatre thèmes d’actualité :
+l’art contemporain, la découverte de nouvelles espèces, les décès liés au sport
+et les viols acquittés.</p>
+          <p>La découverte de nouvelles espèces est représentée par des animaux
+entrelacés comme une chimère : un organisme sans frontières,
+sans début ni fin.</p>
+        </div>
+
+        <div class="project-infos">
+          <span>2024</span><br>
+          Format 60 × 80 cm<br>
+        </div>
+
+      </div>
+
+      <!-- Galerie mobile: autres images à la suite -->
+      <div class="mobile-gallery" aria-label="Galerie du projet (mobile)">
+        <img id="mobileHero" src="image/actus/poster-animaux-texte_resultat.webps" alt="vue1">
+      </div>
+    </div>
+  </div>
+
+  <!-- Colonne droite : image principale avec flèches -->
+  <div class="right">
+    <div class="hero-wrap">
+      <button class="arrow arrow-left" aria-label="Image précédente">&#10094;</button>
+      <img id="heroImage" class="hero" style="opacity:1"
+           src="image/actus/poster-animaux-texte_resultat.webp" alt="Poster Censure">
+      <button class="arrow arrow-right" aria-label="Image suivante">&#10095;</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  const images = [
+    "image/actus/poster-animaux-texte_resultat.webp",
+  ];
+  let currentIndex = 0;
+  const hero = document.getElementById('heroImage');
+  const mobileHero = document.getElementById('mobileHero');
+
+  function updateBoth(src){
+    // desktop
+    hero.style.transition = 'opacity 180ms ease';
+    hero.style.opacity = 0;
+    setTimeout(() => {
+      hero.src = src;
+      hero.style.opacity = 1;
+    }, 160);
+    // mobile
+    if (mobileHero) mobileHero.src = src;
+  }
+
+  function updateImage() {
+    const src = images[currentIndex];
+    updateBoth(src);
+  }
+
+  function goToPrevious() {
+    currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+    updateImage();
+  }
+
+  function goToNext() {
+    currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+    updateImage();
+  }
+
+  const leftArrow = document.querySelector('.arrow-left');
+  const rightArrow = document.querySelector('.arrow-right');
+
+  if (leftArrow) {
+    leftArrow.addEventListener('click', (e) => {
+      e.preventDefault();
+      goToPrevious();
+    });
+  }
+  if (rightArrow) {
+    rightArrow.addEventListener('click', (e) => {
+      e.preventDefault();
+      goToNext();
+    });
+  }
+
+  // Navigation clavier (flèches gauche/droite)
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      e.preventDefault();
+      goToPrevious();
+    } else if (e.key === 'ArrowRight') {
+      e.preventDefault();
+      goToNext();
+    }
+  });
+
+  updateImage();
+})();
+</script>
+
+</body>
+</html>
