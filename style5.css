@@ -7,7 +7,7 @@ html, body { height: 100%; }
 :root{
   --gutter: 48px;
   --text-color: #111;
-  --muted: #cfcfcf;
+  --muted: #acacac;
   --accent: #111;
   --font-serif: "Baskervville", Georgia, "Times New Roman", serif;
   --font-sans: Helvetica, Arial, sans-serif;
@@ -60,7 +60,7 @@ body{
 .content-left {
   display: flex;
   flex-direction: column;
-  gap: 50px;
+  gap: 150px;
 }
 
 /* Logo */
@@ -140,7 +140,7 @@ body{
   width: 100%;
   text-decoration: none; /* pas de soulignement */
 }
-.products .name:hover { color: #888; }
+.products .name:hover { color: #444444; }
 .products .name.active {
   color: var(--accent);
   font-weight: 600;
