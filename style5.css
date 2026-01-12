@@ -179,6 +179,7 @@ body{
   justify-content: center;
   background: transparent;
   z-index: 0;
+  flex: 1 0 0;
 }
 .hero {
   max-width: 100%;
