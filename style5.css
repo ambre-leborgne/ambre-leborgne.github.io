@@ -179,16 +179,18 @@ body{
   justify-content: center;
   background: transparent;
   z-index: 0;
-  flex: 1 0 0;
 }
 .hero {
+  /* Remplacé pour compatibilité Safari : remplir la zone droite */
+  display: block;
+  width: 100%;           /* occupe la largeur de la colonne droite (50vw) */
+  height: auto;          /* conserve les proportions */
   max-width: 100%;
   max-height: 100vh;
-  height: 100%;
-  display: block;
   object-fit: contain;
+  -webkit-object-fit: contain; /* fallback Safari */
   transition: opacity 180ms ease, transform .4s ease;
-  opacity: 0; /* invisible par défaut (révélé au survol) */
+  opacity: 1; /* visible par défaut (ou gère via JS si tu veux l'effet d'apparition) */
 }
 
 /* Lang switch (si utilisé) */
